@@ -68,8 +68,8 @@ sudo apt-get update
 sudo apt-get install gcc-4.9 g++-4.9
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.9 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.9
 ```
-### [ROS jade](http://wiki.ros.org/jade/)
-For detailed description of installation see [here](http://wiki.ros.org/jade/Installation/Ubuntu). However, the following instructions will guide you through the installation for this project. This has been tested on a clean installation of [Ubuntu 14.04](http://releases.ubuntu.com/14.04/).
+### [ROS Indigo](http://wiki.ros.org/indigo/)
+For detailed description of installation see [here](http://wiki.ros.org/indigo/Installation/Ubuntu). However, the following instructions will guide you through the installation for this project. This has been tested on a clean installation of [Ubuntu 14.04](http://releases.ubuntu.com/14.04/).
 ```
 #!bash
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -79,14 +79,14 @@ sudo apt-get update
 #### install ros desktop and control related stuff
 ```
 #!bash
-sudo apt-get install ros-jade-desktop
-sudo apt-get install ros-jade-controller-interface ros-jade-controller-manager ros-jade-control-toolbox ros-jade-transmission-interface ros-jade-joint-limits-interface
+sudo apt-get install ros-indigo-desktop
+sudo apt-get install ros-indigo-controller-interface ros-indigo-controller-manager ros-indigo-control-toolbox ros-indigo-transmission-interface ros-indigo-joint-limits-interface
 ```
 #### install gazebo5 and gazebo-ros-pkgs
 ```
 #!bash
 sudo apt-get install gazebo5 libgazebo5-dev 
-sudo apt-get install ros-jade-gazebo-ros-pkgs
+sudo apt-get install ros-indigo-gazebo-ros-pkgs
 ```
 You should try to run gazebo now, to make sure its working. 
 ```
@@ -147,7 +147,7 @@ Now this is very important. For both build and especially running the code succe
 source /usr/share/gazebo-5.0/setup.sh
 export GAZEBO_MODEL_PATH=/path/to/ros_control/src/roboy_simulation:$GAZEBO_MODEL_PATH
 export GAZEBO_PLUGIN_PATH=/path/to/ros_control/devel/lib:$GAZEBO_PLUGIN_PATH
-source /opt/ros/jade/setup.bash
+source /opt/ros/indigo/setup.bash
 source /path/to/ros_control/devel/setup.bash
 ```
 Then you can build with:
@@ -170,11 +170,11 @@ mkdir -p ~/ros_ws/src
 cd ~/ros_ws/src
 git clone https://github.com/ros-simulation/gazebo_ros_pkgs
 cd gazebo_ros_pkgs
-git checkout jade-devel
+git checkout indigo-devel
 cd ~/ros_ws
 sudo -s
-source /opt/ros/jade/setup.bash
-catkin_make_isolated --install --install-space /opt/ros/jade/ -DCMAKE_BUILD_TYPE=Release
+source /opt/ros/indigo/setup.bash
+catkin_make_isolated --install --install-space /opt/ros/indigo/ -DCMAKE_BUILD_TYPE=Release
 exit
 ```
 #### If the build fails, complaining about missing headers,
